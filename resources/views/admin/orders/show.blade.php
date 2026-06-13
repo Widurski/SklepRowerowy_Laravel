@@ -6,7 +6,7 @@
     <h1>Zamówienie #{{ $order->id }}</h1>
 
     <div class="info-box">
-        <p><strong>Klient:</strong> {{ $order->user?->name ?? '—' }} ({{ $order->user?->email ?? '—' }})</p>
+        <p><strong>Klient:</strong> {{ $order->user?->name ?? '-' }} ({{ $order->user?->email ?? '-' }})</p>
         <p><strong>Data:</strong> {{ $order->created_at->format('d.m.Y H:i') }}</p>
         <p><strong>Status:</strong> {{ $order->statusLabel() }}</p>
         <p><strong>Kwota:</strong> {{ number_format($order->total_price, 2, ',', ' ') }} zł</p>
@@ -57,5 +57,5 @@
         </tbody>
     </table>
 
-    <p style="margin-bottom:16px"><a href="{{ route('admin.orders.index') }}">&larr; Wróć do listy zamówień</a></p>
+    <p style="margin-bottom:16px"><a href="{{ route('admin.orders.index') }}">Wróć do listy zamówień</a></p>
 @endsection

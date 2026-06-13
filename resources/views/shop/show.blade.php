@@ -32,5 +32,5 @@
         <p><a href="{{ route('login') }}">Zaloguj się</a>, aby dodać produkt do koszyka.</p>
     @endif
 
-    <p style="margin-top:16px"><a href="{{ route('home') }}">&larr; Wróć do sklepu</a></p>
+    <p style="margin-top:16px"><a href="{{ route('home') }}">Wróć do sklepu</a></p>
 @endsection

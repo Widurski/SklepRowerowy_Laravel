@@ -58,7 +58,7 @@
         </table>
 
         <p style="margin-top:10px">
-            <a href="{{ route('orders.checkout') }}" class="btn" style="display:inline-block; padding:9px 20px">Przejdź do kasy &rarr;</a>
+            <a href="{{ route('orders.checkout') }}" class="btn" style="display:inline-block; padding:9px 20px">Przejdź do kasy</a>
         </p>
     @endif
 @endsection

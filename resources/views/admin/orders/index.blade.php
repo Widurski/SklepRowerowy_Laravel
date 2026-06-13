@@ -23,7 +23,7 @@
                 @foreach($orders as $order)
                     <tr>
                         <td>#{{ $order->id }}</td>
-                        <td>{{ $order->user?->name ?? '—' }}</td>
+                        <td>{{ $order->user?->name ?? '-' }}</td>
                         <td>{{ $order->created_at->format('d.m.Y H:i') }}</td>
                         <td>{{ $order->statusLabel() }}</td>
                         <td>{{ number_format($order->total_price, 2, ',', ' ') }} zł</td>

@@ -45,5 +45,5 @@
         </tbody>
     </table>
 
-    <p><a href="{{ route('orders.index') }}">&larr; Wróć do zamówień</a></p>
+    <p><a href="{{ route('orders.index') }}">Wróć do zamówień</a></p>
 @endsection

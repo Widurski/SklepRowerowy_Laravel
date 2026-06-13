@@ -23,3 +23,4 @@ Co spełnia
 - php artisan serve
 
 Aplikacja działa pod adresem http://127.0.0.1:8000
+php artisan optimize:clear

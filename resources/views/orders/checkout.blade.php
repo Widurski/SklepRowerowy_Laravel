@@ -63,7 +63,7 @@
         <div style="margin-top:16px">
             <button type="submit">Złóż zamówienie</button>
             &nbsp;
-            <a href="{{ route('cart.index') }}" class="btn-secondary">&larr; Wróć do koszyka</a>
+            <a href="{{ route('cart.index') }}" class="btn-secondary">Wróć do koszyka</a>
         </div>
     </form>
 @endsection

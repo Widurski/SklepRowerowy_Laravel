@@ -16,6 +16,6 @@
     <p>
         <a href="{{ route('admin.users.edit', $user) }}" class="btn">Edytuj</a>
         &nbsp;
-        <a href="{{ route('admin.users.index') }}" class="btn-secondary">&larr; Wróć do listy</a>
+        <a href="{{ route('admin.users.index') }}" class="btn-secondary">Wróć do listy</a>
     </p>
 @endsection
