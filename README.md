@@ -27,3 +27,5 @@ php artisan optimize:clear
 
 
 https://github.com/Widurski/SklepRowerowy_Laravel
+
+maile: https://mailtrap.io
