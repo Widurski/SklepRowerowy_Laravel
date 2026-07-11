@@ -7,12 +7,16 @@ use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
     public function index()
     {
-        $orders = auth()->user()->orders()->latest()->get();
+        $orders = Order::query()
+            ->where('user_id', Auth::id())
+            ->latest()
+            ->get();
         return view('orders.index', compact('orders'));
     }
 
@@ -45,7 +49,6 @@ class OrderController extends Controller
             'shipping_postal_code.regex' => 'Podaj kod pocztowy w formacie 00-000.',
         ]);
 
-        // Sprawdzenie stanu magazynowego przed zapisem zamówienia
         foreach ($cart as $item) {
             $product = Product::find($item['product_id']);
             if (!$product) {
@@ -63,9 +66,8 @@ class OrderController extends Controller
 
         $total = array_sum(array_map(fn($item) => $item['price'] * $item['quantity'], $cart));
 
-        // Tworzymy zamówienie
         $order = Order::create([
-            'user_id'              => auth()->id(),
+            'user_id'              => Auth::id(),
             'status'               => 'pending',
             'total_price'          => $total,
             'shipping_name'        => $request->shipping_name,
@@ -74,7 +76,6 @@ class OrderController extends Controller
             'shipping_city'        => $request->shipping_city,
         ]);
 
-        // Zapisujemy pozycje zamówienia i zmniejszamy stan magazynowy
         foreach ($cart as $item) {
             OrderItem::create([
                 'order_id'   => $order->id,
@@ -88,7 +89,6 @@ class OrderController extends Controller
             $product->save();
         }
 
-        // Czyścimy koszyk
         session()->forget('cart');
 
         return redirect()->route('orders.index')->with('success', 'Zamówienie zostało złożone!');
@@ -96,7 +96,7 @@ class OrderController extends Controller
 
     public function show(Order $order)
     {
-        if ($order->user_id !== auth()->id()) {
+        if ($order->user_id !== Auth::id()) {
             abort(403);
         }
 

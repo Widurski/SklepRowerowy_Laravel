@@ -11,25 +11,28 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        User::create([
+        User::updateOrCreate([
+            'email' => 'admin@rowerowo.pl',
+        ], [
             'name'              => 'Administrator',
-            'email'             => 'admin@rowerowo.pl',
             'password'          => Hash::make('Crmm1234'),
             'role'              => 'administrator',
             'email_verified_at' => now(),
         ]);
 
-        User::create([
+        User::updateOrCreate([
+            'email' => 'kierownik@rowerowo.pl',
+        ], [
             'name'              => 'Jan Kierownik',
-            'email'             => 'kierownik@rowerowo.pl',
             'password'          => Hash::make('Crmm1234'),
             'role'              => 'kierownik',
             'email_verified_at' => now(),
         ]);
 
-        User::create([
+        User::updateOrCreate([
+            'email' => 'klient@rowerowo.pl',
+        ], [
             'name'              => 'Anna Klient',
-            'email'             => 'klient@rowerowo.pl',
             'password'          => Hash::make('Crmm1234'),
             'role'              => 'client',
             'email_verified_at' => now(),
@@ -69,7 +72,9 @@ class DatabaseSeeder extends Seeder
         ];
 
         foreach ($products as $product) {
-            Product::create($product);
+            Product::updateOrCreate([
+                'name' => $product['name'],
+            ], $product);
         }
     }
 }

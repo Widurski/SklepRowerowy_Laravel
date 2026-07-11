@@ -8,7 +8,7 @@
     @include('partials.errors')
 
     <div class="form-box">
-        <form action="{{ route('products.update', $product) }}" method="POST">
+        <form action="{{ route('products.update', $product) }}" method="POST" novalidate>
             @csrf
             @method('PUT')
 

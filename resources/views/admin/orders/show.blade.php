@@ -18,7 +18,7 @@
     </div>
 
     @if(session('success'))
-        <p style="color:green; margin-bottom:12px">{{ session('success') }}</p>
+        <p style="margin-bottom:12px">{{ session('success') }}</p>
     @endif
 
     <h2 style="font-size:16px; margin-bottom:10px">Zmień status</h2>

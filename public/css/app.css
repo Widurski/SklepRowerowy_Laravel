@@ -1,4 +1,4 @@
-/* Paleta: #000000, #413f3f, #888888, #cc0000 (tylko błędy) */
+
 
 * {
     box-sizing: border-box;
@@ -24,8 +24,6 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Nawigacja */
-
 nav {
     background-color: #413f3f;
     padding: 10px 20px;
@@ -33,7 +31,7 @@ nav {
 }
 
 nav a {
-    color: #ffffff;
+    color: #8a3333;
     margin-right: 6px;
 }
 
@@ -63,8 +61,6 @@ nav button:hover {
     text-decoration: underline;
 }
 
-/* Kontener główny */
-
 main {
     max-width: 900px;
     width: 100%;
@@ -93,8 +89,6 @@ footer {
     line-height: 1.9;
 }
 
-/* Komunikaty */
-
 .msg-success {
     border: 1px solid #888888;
     padding: 9px 12px;
@@ -112,8 +106,6 @@ footer {
 .errors ul {
     margin: 6px 0 0 18px;
 }
-
-/* Formularze */
 
 form p {
     margin-bottom: 12px;
@@ -150,8 +142,6 @@ textarea {
     resize: vertical;
 }
 
-/* Przyciski */
-
 button[type="submit"],
 .btn {
     background-color: #555555;
@@ -186,8 +176,6 @@ button[type="submit"],
 }
 
 
-/* Tabele */
-
 table {
     width: 100%;
     border-collapse: collapse;
@@ -206,16 +194,12 @@ table td {
     padding: 8px 10px;
 }
 
-/* Strona logowania i rejestracji */
-
 .form-box {
     max-width: 400px;
     border: 1px solid #888888;
     padding: 24px;
     margin-top: 10px;
 }
-
-/* Dashboard */
 
 .dashboard-links {
     list-style: none;
@@ -226,8 +210,6 @@ table td {
 .dashboard-links li {
     padding: 4px 0;
 }
-
-/* Koszyk */
 
 .cart-total {
     font-size: 16px;
@@ -240,8 +222,6 @@ input[type="number"].qty {
     text-align: center;
 }
 
-/* Info box */
-
 .info-box {
     border: 1px solid #888888;
     padding: 14px 18px;
@@ -252,8 +232,6 @@ input[type="number"].qty {
 .info-box p {
     margin-bottom: 6px;
 }
-
-/* Paginacja */
 
 .page-link {
     display: inline-block;
